@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Receive Data</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div style="width: 85%; margin-left: auto; margin-right: auto; text-align: center;">
+  <ion-label style="font-weight: bolder;">Arithmetic Operation</ion-label><br><br>
+  <ion-item fill="outline">
+    <ion-label>First Number:</ion-label>
+    <ion-text>{{userInput1}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Second Number:</ion-label>
+    <ion-text>{{userInput2}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Sum:</ion-label>
+    <ion-text>{{ValSum}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Subdivsion:</ion-label>
+    <ion-text>{{Sub}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Division:</ion-label>
+    <ion-text>{{Div}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Multiplication:</ion-label>
+    <ion-text>{{Multi}}</ion-text>
+  </ion-item><br>
+  <ion-item fill="outline">
+    <ion-label>Modulo:</ion-label>
+    <ion-text>{{Mod}}</ion-text>
+  </ion-item><br><br>
+  <ion-label style="font-weight: bolder;">ION-TEXTAREA</ion-label><br><br>
+  <ion-item fill="outline">
+    <ion-label>First Name:</ion-label>
+    <ion-text>{{userName1}}</ion-text>
+  </ion-item><br><br>
+  <ion-item fill="outline">
+    <ion-label>Last Name:</ion-label>
+    <ion-text>{{userName2}}</ion-text>
+  </ion-item><br><br>
+  <ion-item fill="outline">
+    <ion-label>Full Name:</ion-label>
+    <ion-text>{{userName1}} {{userName2}}</ion-text>
+  </ion-item><br><br>
+
+  <ion-item fill="outline">
+    <ion-label>Course & Year:</ion-label>
+    <ion-text>{{radbutton}}</ion-text>
+  </ion-item><br><br>
+  <ion-button fill="outline" color="dark" expand="block" (click)="goToInputPage()">BACK</ion-button>
+</div>
+</ion-content>
