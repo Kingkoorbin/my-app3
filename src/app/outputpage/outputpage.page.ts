@@ -12,22 +12,22 @@ export class OutputpagePage implements OnInit {
 
   constructor(private navCtrl: NavController, private activatedRoute: ActivatedRoute) { }
 
-  userInput1: any = 'user-input1';
-  userInput2: any = 'user-input2';
+  userInput1: number = parseInt('user-input1');
+  userInput2: number = parseInt('user-input2');
+  ValSum: number = parseInt('ValSum');
+  Sub: number = parseInt('Sub');
+  Div: number = parseInt('Div');
+  Multi: number = parseInt('Multi');
+  Mod: number = parseInt('Mod');
+
   userName1: any = 'user-name1';
   userName2: any = 'user-name2';
-  radbutton: any = 'selectedValue';
-  ValSum: any = 'ValSum';
-  Sub: any = 'Sub';
-  Div: any = 'Div';
-  Multi: any = 'Multi';
-  Mod: any = 'Mod';
 
-  goToInputPage(){
+  goToInputPage() {
     this.navCtrl.navigateBack(['/inputpage']);
     this.clearTextArea();
   }
-  clearTextArea(){
+  clearTextArea() {
     const textarea1 = document.querySelector('#user-input1') as HTMLIonInputElement;
     textarea1.value = '';
     const textarea2 = document.querySelector('#user-input2') as HTMLIonInputElement;
@@ -35,16 +35,15 @@ export class OutputpagePage implements OnInit {
     const textarea3 = document.querySelector('#user-name1') as HTMLIonTextareaElement;
     textarea1.value = '';
     const textarea4 = document.querySelector('#user-name2') as HTMLIonTextareaElement;
-    textarea2.value = '';`  `
+    textarea2.value = ''; `  `
   }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((params) => {
+    this.activatedRoute.queryParams.subscribe(params => {
       this.userInput1 = params['userInput1'];
       this.userInput2 = params['userInput2'];
       this.userName1 = params['userName1'];
       this.userName2 = params['userName2'];
-      this.radbutton = params['radbutton'];
       this.ValSum = params['ValSum'];
       this.Sub = params['Sub'];
       this.Div = params['Div'];
