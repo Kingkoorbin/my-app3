@@ -11,8 +11,13 @@ import { AlertController, NavController } from '@ionic/angular';
 export class InputpagePage implements OnInit {
 
   constructor(private navCtrl: NavController, private alertController: AlertController) { }
-  userInput1: any = '';
-  userInput2: any = '';
+  // userInput1: any = '';
+  // userInput2: any = '';
+
+  userInput1 = 0;
+  userInput2 = 0;
+
+
   userName1: any = '';
   userName2: any = '';
 
@@ -22,12 +27,19 @@ export class InputpagePage implements OnInit {
   checkInput(){
     const userInput1 = document.getElementById('user-input1') as HTMLIonInputElement;
     const userInput2 = document.getElementById('user-input2') as HTMLIonInputElement;
-    const userName1 = document.getElementById('user-name1') as HTMLIonInputElement;
-    const userName2 = document.getElementById('user-name2') as HTMLIonInputElement;
+    const userName1 = document.getElementById('user-name1') as HTMLIonTextareaElement;
+    const userName2 = document.getElementById('user-name2') as HTMLIonTextareaElement;
 
     if(!userInput1.value || !userInput2.value || !userName1.value || !userName2.value){
-      const alert = this.alertController.create ({message: 'Please Enter an Input. Thanks.', buttons: ['OK'],});
+      const alert = this.alertController.create ({message: 'Please provide data in each field. Thanks.', buttons: ['OK'],});
       alert.then((alert) => alert.present());
+    }
+    else if(isNaN(Number(userInput1.value)) || isNaN(Number(userInput2.value))){
+        const alert = this.alertController.create({
+          message: 'Please Provide Numeric Number only. Thank You.',
+          buttons: ['OK']
+        });
+        alert.then((alert) => alert.present());
     }
     else {
       this.goToOutputPage();
@@ -36,9 +48,9 @@ export class InputpagePage implements OnInit {
   }
 
   goToOutputPage() {
-    const userInput1 = (document.getElementById('user-input1') as HTMLInputElement).value;
+    const userInput1 = (document.getElementById('user-input1') as HTMLIonInputElement).value;
     const value1 = Number(userInput1);
-    const userInput2 = (document.getElementById('user-input2') as HTMLInputElement).value;
+    const userInput2 = (document.getElementById('user-input2') as HTMLIonInputElement).value;
     const value2 = Number(userInput2);
     const userName1 = (document.getElementById('user-name1') as HTMLIonInputElement).value;
     const userName2 = (document.getElementById('user-name2') as HTMLIonInputElement).value;
